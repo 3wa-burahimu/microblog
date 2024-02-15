@@ -131,6 +131,9 @@ def follow(username):
     else:
         return redirect(url_for('main.index'))
 
+@bp.route('/about')
+def about_page():
+    return render_template('about.html', title=_('About me'))
 
 @bp.route('/unfollow/<username>', methods=['POST'])
 @login_required
